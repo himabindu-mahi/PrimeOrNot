@@ -1,0 +1,76 @@
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+
+class Prime
+{
+	
+	public void primeNumber(int n)             // Method Declaration
+	{
+		boolean isPrime=true;                  //Method Defining 
+		for(int i=2;i<=n/2;i++)
+		{
+			if((n%i)==0)
+			{
+				isPrime=false;
+				break;
+			}
+		}
+		if(isPrime)
+		{
+			System.out.println("Given Number is Prime Number");
+		}
+		else
+		{
+			System.out.println("Given Number is not an Prime Number");
+		}
+	}
+	public void numbersPrint(int n) 
+	{
+			System.out.println("The Prime Numbers to the given range");
+		  for(int i=1; i < n; i++)
+		  {
+                       
+                        boolean isPrime = true;
+                       
+                        for(int j=2; j < i ; j++){
+                               
+                                if(i % j == 0){
+                                        isPrime = false;
+                                        break;
+                                }
+                        }
+                      if(isPrime)
+                                System.out.print(i + " ");
+		  }				
+					
+							
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);    // Takes input from the keyboard
+		System.out.println("Enter number");
+		int n=sc.nextInt();                   // Entered Value should be assigned to the variable n
+		
+		Prime p=new Prime();                  // object creation
+		p.primeNumber(n);                     // Access Class methods through objects
+		p.numbersPrint(n);
+		
+	}
+}
+
+/* Output:---
+
+Enter number
+100
+Given Number is not an Prime Number
+
+The Prime Numbers to the given range
+1 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
+
+
+
+*/
+
+
